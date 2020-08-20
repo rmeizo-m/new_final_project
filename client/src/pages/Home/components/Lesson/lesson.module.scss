@@ -20,12 +20,14 @@
         border: none;
         border-bottom: 1px solid silver;
         background: #fff;
-        flex-basis: 25%;
-      
-    }
-    select + select{
-        margin-left: 16px;
-      }
+        flex-basis: 25%;  
+        @media (max-width:500px){ 
+          flex-basis: 48%;
+          }  
+        }
+        select + select{
+            margin-left: 16px;
+          }
   }
 
   .lessonGroup{
