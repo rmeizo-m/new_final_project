@@ -31,8 +31,20 @@ export const Lesson = () => {
   return (
   <div className={s.lesson}>
     <div className={s.selectGroup}>
-      <select></select>
-      <select></select>
+      <select>
+        <option value="value1">Все</option> 
+        <option value="value2" selected>Не сданы</option>
+        <option value="value3">Сданы</option>
+      </select>
+      <select>
+        <option value="value1">Месяц</option> 
+        <option value="value2" selected>Январь</option>
+        <option value="value3">Февраль</option>
+        <option value="value3">Март</option>
+        <option value="value3">Апрель</option>
+        <option value="value3">Май</option>
+        <option value="value3">Июнь</option>
+      </select>
     </div>
     <div className={s.lessonGroup}>
       {/* {les} */}
