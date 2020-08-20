@@ -29,7 +29,7 @@ export const LessonCard = () => {
         </div>
       </div>
       <div className={videoVisible ? s.open : s.closed}>
-        <ReactPlayer playing={videoVisible} url="https://youtu.be/CueJDjYDmXk"></ReactPlayer>
+        <ReactPlayer width={`100%`} height={`100%`}  playing={videoVisible} url="https://youtu.be/CueJDjYDmXk"></ReactPlayer>
       </div>
   </div>
   )
