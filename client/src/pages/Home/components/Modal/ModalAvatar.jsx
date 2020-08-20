@@ -12,7 +12,7 @@ export const ModalAvatar = (props) => {
           <button onClick={open}>X</button>
         </div>
         <div className={s.modalImg}>
-          <img src="" alt=""/>
+          <img src="https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg" alt=""/>
         </div>
         <form>
           <label htmlFor="inputFile">Загрузить файл</label>

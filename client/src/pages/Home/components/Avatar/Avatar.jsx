@@ -12,7 +12,7 @@ export const Avatar = () => {
       return (
         <>
           <div className={s.avatar} onClick={isOpenModalHeandler}>
-            <img src={noavata || "https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg"} alt=""/>
+            <img src="https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg" alt=""/>
           </div>
           <ModalAvatar 
           open={isOpenModalHeandler} 

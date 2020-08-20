@@ -35,8 +35,8 @@ useEffect(() => {
           />
         </div>
         <div className={s.worckGroup}>
-          <WorckCount />
-          <WorckCount />
+          <WorckCount title={'Тест'} one={'1'} twoe={'2'}/>
+          <WorckCount title={'Домашние задания'} one={'30'} twoe={'32'}/>
         </div>
       </div>
       <div className={s.content}>
