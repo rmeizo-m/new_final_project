@@ -1,0 +1,173 @@
+.table-area{
+    z-index: -1;
+    padding-top: 60px;
+}
+
+.member-avatar-wrapper{
+    width: 50px;
+    height: 50px;
+    background-color: #FABC15;
+    border-radius: 50px;
+}
+
+.empty-th{
+    display: none;
+}
+
+.avatar-td{
+    display: none;
+}
+
+
+.members-table{
+    // margin-top: 60px;
+    width: 100vw;
+    // border: 1px solid navy;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-collapse: collapse;
+
+// Заголовок таблицы
+    th{
+        height: 32px;
+        padding: 8px 16px;
+        background-color: black;
+        color: white;
+        font-weight: 400;
+        text-align: left;
+    }
+
+    .second-th{
+        text-align: right;
+        p{
+            display: none;
+        }
+    }
+
+// Строка таблицы
+    tr{
+        height: 50px;
+    }
+
+// Ячейка таблицы
+    td{
+        padding: 16px;
+        border-bottom: 0.5px solid rgba($color: #000000, $alpha: 0.1);
+        a{
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .contacts-img{
+                width: 20px;
+                height: auto;
+                color: black;
+            }
+            #mail{
+                color: #FF3533;
+            }
+            #telegram{
+                color: #2BA2DF;
+            }
+            .member-link{
+                display: none;
+                font-size: 14px;
+                padding-left: 8px;
+            }
+
+            &:hover{
+                color: #FABC15;
+            }
+        }
+
+    }
+}
+
+.member-enot-wrapper{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: -170px;
+    display: none;
+    .member-enot{
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+
+
+    .table-area{
+        position: relative;
+        padding-top:100px;
+        margin-right:auto;
+        margin-left: auto;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .members-table{
+    margin-top: 16px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+
+// Заголовок таблицы
+
+    th{
+        background-color: white;
+        color: black;
+    }
+
+    .second-th{
+    text-align: left;
+        p{
+            display: block;
+        }
+    }
+
+// Строка таблицы
+
+    tr{
+        height: 65px;
+    }
+
+// Ячейка таблицы
+
+    td{
+        border-bottom: none;
+        a{
+            justify-content: flex-start;
+            .member-link{
+                display: block;
+            }
+        }
+    }
+    }
+}
+
+@media (min-width: 940px) {
+
+    .empty-th{
+        display: block;
+    }
+
+    .avatar-td{
+        display: block;
+    }
+}
+
+@media (min-width: 1300px) {
+    .member-enot-wrapper{
+        display:block;
+    }
+}
+
+
