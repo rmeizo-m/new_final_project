@@ -4,7 +4,45 @@ const config = require('config')
 const jwt = require('jsonwebtoken')
 const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
+const Lesson = require('../models/Lessons')
+
 const router = Router()
+
+
+router.post(
+  '/lessonCreate',
+  async (res, req) => {
+    try {
+     const {create} = req.body
+     const lesson = new Lesson ({
+       name: "Введение в авто",
+       menter:"Павел уколов",
+       zoom: "zoom",
+       material : "",
+       date: new Date,
+       video: ""
+     });
+     await lesson.save();
+
+    } catch (e) {
+      
+    }
+  }
+)
+
+
+router.get(
+  '/lessons',
+  async (res, req) => {
+    try {
+
+      const lesson = await Lesson.find({name})
+      res.json(lesson);
+    }catch(e){
+
+    }
+  } 
+)
 
 router.post(
   '/name',
@@ -19,8 +57,7 @@ router.post(
       return res.status(400).json({ message: 'Пользователь не найден' })
     }
 
-
-    res.json({ 
+    res.json({  
       name: user.name, 
       tel: user.telegram,
       git : user.github,

@@ -1,12 +1,33 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useState, useEffect, useCallback} from 'react';
+import {LessonCard} from './components/LessonCard';
+import {useHttp} from '../../../../hooks/http.hook';
+
 import s from './lesson.module.scss';
 
-import person from './assets/persone.svg';
-import location from './assets/location.svg';
-import vector from './assets/vector.svg';
 
 export const Lesson = () => {
+
+  const [lesson, setLesson] = useState([]);
+  const {request} = useHttp();
+
+  const getLesson= useCallback( async () => {
+    try {
+      const data = await request('/api/user/lessons', 'GET');
+      setLesson(data);
+      console.log("test", data);
+    } catch(e) {}
+  });
+
+  useEffect(() => {
+    getLesson()
+  }, []);
+
+  // Не забыть вернуть запрос и распарсить
+  // const les = lessons.map((lesson, index) => {
+  //   <LessonCard key={index} />
+  // });
+
+
   return (
   <div className={s.lesson}>
     <div className={s.selectGroup}>
@@ -14,24 +35,16 @@ export const Lesson = () => {
       <select></select>
     </div>
     <div className={s.lessonGroup}>
-      <div className={s.lessonCard}>
-        <div className={s.row}>
-          <div className={s.title}><span>1</span>Введение в автотесты</div> 
-          <div className={s.date}>20.08.2020</div>
-        </div>
-
-        <div className={s.item}>
-          <div className={s.ticher}> 
-            <div><img src={person} alt=""/> Павел Уколов</div>
-            <Link to="/"><img src={location} alt=""/>Zoom</Link>
-          </div>
-          <div className={s.btnGroup}>
-            <button className={s.btnP}>Проверка</button>
-            <button className={s.btnVector}><img src={vector} alt=""/></button>
-          </div>
-        </div>
-        
-      </div>
+      {/* {les} */}
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
+     <LessonCard />
     </div>
   </div>
   );
