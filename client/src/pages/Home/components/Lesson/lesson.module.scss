@@ -1,6 +1,8 @@
 .lesson{
   flex: 4;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  margin-left: 40px;
+  padding: 16px;
   @media (max-width: 845px){
   flex: 1;
   margin: 0 10px;
@@ -12,29 +14,30 @@
     justify-content: flex-start;
     @media (max-width:845px){ 
       justify-content: space-between;
+      }
       select{
         outline: none;
         border: none;
         border-bottom: 1px solid silver;
         background: #fff;
-        flex-grow: 1;
-      }
-      select + select{
+        flex-basis: 25%;
+      
+    }
+    select + select{
         margin-left: 16px;
       }
-    }
   }
 
   .lessonGroup{
     margin-top: 10px;
-    @media (max-width:845px){
+    @media (max-width: 600px){
       box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
       padding: 8px 15px; 
-
+    }
       .lessonCard{
         border-bottom: 1px solid silver;
         padding-bottom: 10px;
-
+    
         .row{
           display: flex;
           flex-direction: row;
@@ -60,23 +63,29 @@
         .item{
           display: flex;
           flex-direction: row;
+
           .ticher{
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            @media(min-width:500px){
+              flex-direction: row;
+              justify-content: space-between;
+            }
           
             & img {
               width: 16px;
               height: 16px;
               margin-right: 5px;
             }
-            div, a{
+             div, a{
               font-family: Roboto;
               font-weight: 300;
               font-size: 12px;
               margin: 5px 0;
               color: rgba(0, 0, 0, 0.8);
             }
+
             a{
               text-decoration-line: underline;
             }
@@ -84,14 +93,18 @@
           .btnGroup{
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+             flex-grow: 1;
+            @media (min-width: 500px){
+              flex-direction: row;
+              justify-content: flex-end;
+            }
             .btnP{
               background: #FFFFFF;
               border: 1px solid #FABC15;
               box-sizing: border-box;
               box-shadow: 0px 2px 10px rgba(250, 188, 21, 0.12);
               border-radius: 16px;
-              padding: 5px;
+              padding: 5px 30px;
               margin: 4px 0;
             }
             .btnVector{
@@ -100,11 +113,16 @@
               background: none;
               display: flex;
               justify-content: flex-end;
-              padding:8px 20px 8px 0px;
+              padding:5px 10px 5px 50px;
+              align-items: center;
+              margin-left: 15%;
+              & img{
+                width: 15px;
+                height: 15px;
+              }
             }
           }
         } 
       }
     }
-  }
 }
