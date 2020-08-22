@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import {Avatar} from './components/Avatar/Avatar';
+import {Avatar} from './components';
 import {UserInfo} from './components/UserInfo/UserInfo';
 import {WorckCount} from './components/WorckCount/WorckCount';
 import {Lesson} from './components/Lesson/Lesson';
@@ -13,17 +13,17 @@ export const HomePage = () => {
   const [info, setInfo] = useState([]);
   const {request} = useHttp();
 
-const getHome = useCallback( async () => {
-  try {
-    const data = await request('/api/user/name', 'POST', {email: 'test@mail.ru'});
-    setInfo(data);
-    console.log(data);
-  } catch(e) {}
-});
+  const getHome = useCallback( async () => {
+    try {
+      const data = await request('/api/user/name', 'POST', {email: 'test@mail.ru'});
+      setInfo(data);
+      console.log( "Homme Page",data);
+    } catch(e) {}
+  });
 
-useEffect(() => {
-  getHome()
-}, []);
+  useEffect(() => {
+    getHome()
+  }, []);
 
   return(
     <div className={s.inner}>

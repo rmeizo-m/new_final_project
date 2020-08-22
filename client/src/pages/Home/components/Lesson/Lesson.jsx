@@ -7,20 +7,20 @@ import s from './lesson.module.scss';
 
 export const Lesson = () => {
 
-  const [lesson, setLesson] = useState([]);
-  const {request} = useHttp();
+  // const [lesson, setLesson] = useState([]);
+  // const {request} = useHttp();
 
-  const getLesson= useCallback( async () => {
-    try {
-      const data = await request('/api/user/lessons', 'GET');
-      setLesson(data);
-      console.log("test", data);
-    } catch(e) {}
-  });
+  // const getLesson= useCallback( async () => {
+  //   try {
+  //     const data = await request('/api/user/lessons', 'GET');
+  //     setLesson(data);
+  //     console.log("test", data);
+  //   } catch(e) {}
+  // });
 
-  useEffect(() => {
-    getLesson()
-  }, []);
+  // useEffect(() => {
+  //   getLesson()
+  // }, []);
 
   // Не забыть вернуть запрос и распарсить
   // const les = lessons.map((lesson, index) => {
@@ -47,15 +47,6 @@ export const Lesson = () => {
       </select>
     </div>
     <div className={s.lessonGroup}>
-      {/* {les} */}
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
-     <LessonCard />
      <LessonCard />
     </div>
   </div>

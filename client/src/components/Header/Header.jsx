@@ -1,23 +1,25 @@
 import React, { useContext } from 'react';
 import {  useLocation, Link, useHistory } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import {menuItem} from '../../context/HeaderContext'
 
 import s from './header.module.scss';
 import logo from '../../assets/header/logo1.png';
 import bar from '../../assets/header/hotdog.svg';
 import cross from '../../assets/header/cross.svg';
 
-const menuItems = [
-  {link: "/", title: "Главная"},
-  {link: "/news", title: "Новости"},
-  {link: "/members", title: "Участники"},
-  {link: "/teachers", title: "Менторы"}
-];
+// const menuItems = [
+//   {link: "/", title: "Главная"},
+//   {link: "/news", title: "Новости"},
+//   {link: "/members", title: "Участники"},
+//   {link: "/teachers", title: "Менторы"}
+// ];
 
 export const Header = () => {
   const [menuVisible, setMenuVisible] = React.useState(false);
   const history = useHistory();
   const loc = useLocation();
+  const menu = useContext(menuItem);
   const auth = useContext(AuthContext);
   const toggleMenu = () => setMenuVisible(!menuVisible);
 
@@ -52,10 +54,10 @@ export const Header = () => {
         <img className={s.logo} src={logo} alt="logo" />
         </div>
         <div className={s.title}>
-          {(menuItems.find(t => t.link === loc.pathname) || {title: 'Unknown page'}).title}
+          {(menu.find(t => t.link === loc.pathname) || {title: 'Unknown page'}).title}
         </div>
         <ul className={menuVisible? `${s.menu} ${s.menuOpen}`: s.menu}>
-          {menuItems.map(MenuItem)}
+          {menu.map(MenuItem)}
          
           <button className={`btn ${s.btn}`}
           onClick={logoutHeandler}

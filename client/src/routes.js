@@ -17,8 +17,8 @@ export const useRoutes = isAuthenticated => {
           <Route exact path="/members" component={(MembersPage)} />
           <Route exact path="/news" component={(NewsPage)} />
           <Route exact path="/teachers" component={(TeachersPage)} />
-          <Route exact path="/404" component={(NotFound)} />
-          <Redirect to="/404" exact />
+          <Route path="/404" component={()=>(NotFound)} />
+          <Redirect to="/404"/>
         </Switch>
     );
   }

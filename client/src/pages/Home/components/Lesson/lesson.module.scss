@@ -12,7 +12,7 @@
   .selectGroup{
     display: flex;
     justify-content: flex-start;
-    @media (max-width:845px){ 
+    @media (max-width:500px){ 
       justify-content: space-between;
       }
       select{

@@ -5,16 +5,13 @@ import mail from '../../assets/mail.png';
 import gitIcon from '../../assets/github.png';
 import telegramIcon from '../../assets/telegram.png';
 
-
-
-
 export const UserInfo = ({info}) => {
   return (
     <div className={s.inner}>
-      <div className={s.userName}>{info.name}</div>
+      <div className={s.userName}>{info.name ? info.name : "Введите имя"}</div>
       <div className={s.item}>
           <img src={gitIcon} alt=""/>
-          <span>{info.git}</span>
+          <span>{info.git ? info.git : "Ссылка на гит"}</span>
         </div>
       <div className={s.item}>
           <img src={mail} alt=""/>
@@ -22,7 +19,7 @@ export const UserInfo = ({info}) => {
         </div>
       <div className={s.item}>
         <img src={telegramIcon} alt=""/>
-        <span>{info.tel}</span>
+        <span>{info.tel ? info.tel : "Телеграм" }</span>
       </div>
     </div>
   );

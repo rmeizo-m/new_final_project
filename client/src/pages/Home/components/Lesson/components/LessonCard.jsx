@@ -24,7 +24,7 @@ export const LessonCard = () => {
           <Link to="/"><img src={location} alt=""/>Zoom</Link>
         </div>
         <div className={s.btnGroup}>
-          <button className={s.btnP}>Проверка</button>
+          <button className={s.btnP}>Cдать</button>
           <button className={s.btnVector} onClick={openHeandle}><img src={vector} alt=""/></button>
         </div>
       </div>
