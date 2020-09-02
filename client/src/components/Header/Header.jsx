@@ -8,13 +8,6 @@ import logo from '../../assets/header/logo1.png';
 import bar from '../../assets/header/hotdog.svg';
 import cross from '../../assets/header/cross.svg';
 
-// const menuItems = [
-//   {link: "/", title: "Главная"},
-//   {link: "/news", title: "Новости"},
-//   {link: "/members", title: "Участники"},
-//   {link: "/teachers", title: "Менторы"}
-// ];
-
 export const Header = () => {
   const [menuVisible, setMenuVisible] = React.useState(false);
   const history = useHistory();

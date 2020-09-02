@@ -8,42 +8,6 @@ const Lesson = require('../models/Lessons')
 
 const router = Router()
 
-
-router.post(
-  '/lessonCreate',
-  async (res, req) => {
-    try {
-     const {create} = req.body
-     const lesson = new Lesson ({
-       name: "Введение в авто",
-       menter:"Павел уколов",
-       zoom: "zoom",
-       material : "",
-       date: new Date,
-       video: ""
-     });
-     await lesson.save();
-
-    } catch (e) {
-      
-    }
-  }
-)
-
-
-router.get(
-  '/lessons',
-  async (res, req) => {
-    try {
-
-      const lesson = await Lesson.find({name})
-      res.json(lesson);
-    }catch(e){
-
-    }
-  } 
-)
-
 router.post(
   '/name',
   async (req, res) => {
@@ -52,7 +16,7 @@ router.post(
     const {email} = req.body
 
     const user = await User.findOne({ email })
-
+    const lesson = await Lesson.find()
     if (!user) {
       return res.status(400).json({ message: 'Пользователь не найден' })
     }
@@ -61,9 +25,9 @@ router.post(
       name: user.name, 
       tel: user.telegram,
       git : user.github,
-      avatar: user.avatar ,
-      email: user.email
-
+      avatar: user.avatar,
+      email: user.email,
+      lesson: lesson
     })
 
   } catch (e) {

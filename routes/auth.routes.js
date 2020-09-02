@@ -38,11 +38,10 @@ router.post(
     const user = new User({ 
       email, 
       password: hashedPassword, 
-      name:  "Введите фамилию и имя", 
-      telegram: "Введите телеграм", 
-      github: "Ссылка на репозиторий", 
-      avatar: false,
-      img : "null"
+      name:  "", 
+      telegram: "", 
+      github: "", 
+      img : ""
     })
 
     await user.save()

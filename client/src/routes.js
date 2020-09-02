@@ -13,12 +13,11 @@ export const useRoutes = isAuthenticated => {
   if (isAuthenticated) {
     return (
         <Switch>   
-          <Route exact path="/" component={(HomePage)} />
-          <Route exact path="/members" component={(MembersPage)} />
-          <Route exact path="/news" component={(NewsPage)} />
-          <Route exact path="/teachers" component={(TeachersPage)} />
-          <Route path="/404" component={()=>(NotFound)} />
-          <Redirect to="/404"/>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/members" component={MembersPage} />
+          <Route exact path="/news" component={NewsPage} />
+          <Route exact path="/teachers" component={TeachersPage} />
+          <Route component={NotFound} />
         </Switch>
     );
   }

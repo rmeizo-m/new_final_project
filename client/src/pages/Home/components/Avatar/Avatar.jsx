@@ -1,7 +1,7 @@
 import React from 'react';
 import {ModalAvatar} from '../Modal/ModalAvatar';
 import s from './avatar.module.scss';
-import noavata from './assets/noAvatar.svg';
+// import noavata from './assets/noAvatar.svg';
 
 export const Avatar = () => {
   const [modalVisible, setModalVisible] = React.useState(false);

@@ -7,8 +7,7 @@ const schema = new Schema({
   email: {type: String, required:true, unique: true},
   password: {type: String, required: true},
   avatar: {type: Boolean, required: false},
-  img: {type: String, required: true},
-  lessons: [{ type: Types.ObjectId, ref: 'Link' }]
+  img: {type: String, required: true}
 });
 
 module.exports = model('user', schema); 
